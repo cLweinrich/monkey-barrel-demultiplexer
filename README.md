@@ -1,7 +1,7 @@
 # monkey-barrel-demultiplexer
 A demultiplexing pipeline designed specifically to demultiplex barcoded sequences that have been ligated together end-to-end (intentionally or not).
 
-# Amplicons are sometimes ligated end-to-end during library prep unintenionally
+# Amplicons are sometimes (unintentionally) ligated end-to-end during library prep
 During preparation for a sequencing run on an ONT MinION, the adapater ligation step requires the addition of a T4 ligase. 
 The T4 ligase is intended to ligate the adapters to sequences which are connected to adapters by a 1bp A-T overhang.
 However, read length distributions from the MinION show a peak at the expected product length, but then one or more smaller peaks at perfect multiples of the expected length (e.g. a 300bp product has peaks at 300, 600, 900, etc.)
