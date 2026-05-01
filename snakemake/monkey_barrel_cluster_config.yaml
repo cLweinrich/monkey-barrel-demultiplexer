@@ -1,0 +1,69 @@
+# Monkey Barrel Demultiplexer - Clustering Config
+
+### Env/Dir/File Stuff ###
+mamba_env: "demux" 
+  # requires regex (not re), BioPython, and VSEARCH
+workdir: "/Users/cweinrich/monkey_barrel/"
+basecalled_fastq: "basecalled.fastq"
+barcodes_file: "barcodes.txt"
+### # ###
+
+### General Options ###
+fasta_width: 0 
+  # controls text wrapping in vsearch fastx files (0 = no wrapping)
+### # ###
+
+### Demux Options ###
+barcodes_order: "1,2,4,3,5"
+  # column order for sample id, fwd barcode, fwd primer, rev barcode, rev primer in barcode file
+flush_size: 10000
+  # number of sequences to hold in memory before flushing to file
+monomer_min_length: 500
+monomer_max_length: 900
+  # distance between barcodes to be considered a valid monomer
+max_edit_dist: 0
+max_deletions: 0
+max_insertions: 0
+max_substitutions: 0
+  # maximum number of differences between barcode sequence and actual sequence to be considered a hit
+demux_threads: 44
+### # ###
+
+### FASTQ Filter Options ###
+q_max: 50
+  # the maximum quality score for the FASTQ file
+  # Nanopore scores go from 0 to 50
+max_expected_error: 10 
+  # the expected error is the sum of error probabilities for all the positions in the sequence
+  # e.g. a 40bp sequence where each position is wrong 50% of the time would have an EE of 20
+min_len: 0
+max_len: 1000
+max_ns: 0
+  # maximum number of N's (ambiguous nucleotides)
+### # ###
+
+### Cluster Options ###
+cluster_id: 0.99 
+  # required pairwise identity between sequence and centroid for sequence to be added to cluster (value 0.0 - 1.0)
+  # pairwise identity is defined as: (matching columns) / (alignment length - terminal gaps)
+cluster_id_definition: 2
+  # this option can be used to change the definition of pairwise identity
+  # 0   CD-HIT definition: (matching columns) / (shortest sequence length)
+  # 1   edit distance: (matching columns) / (alignment length)
+  # 2   edit distance excluding terminal gaps (default)
+  # 3   Marine Biological Lab definition counting each gap openingas a single mismatch, whether or not the gap was extended: 
+  #       1.0 - [(mismatches + gap openings)/(longest sequence length)]
+  # 4   BLAST definition, equivalent to --iddef 1 in a context of global pairwise alignment
+cluster_threads: 24
+### # ###
+
+### UCHIME Options ###
+abundance_skew: 16.0
+  # used to distinguish in a three-way alignment which sequence is the chimera and which are the parents
+  # parents are assumed to be more abundant than chimera
+### # ###
+
+### Size Sort Options ###
+size_sort_minsize: 2
+  # minimum abundance for sequence to be evaluated as possibly real
+### # ###
