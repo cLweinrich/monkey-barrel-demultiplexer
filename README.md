@@ -11,7 +11,7 @@ Although the resultant reads are multimeric amalgamations of various products, t
 
 Hence, I have written this script to search for monomers with a valid barcode pairing within a larger sequence. Monomers can then be extracted and sorted as usual. 
 
-(As a sidenote, since the MinION is primarily designed for long read sequencing, **intentionall** joining shorter reads together might produce better results. I haven't tried, but I am curious to know.)
+(As a sidenote, since the MinION is primarily designed for long read sequencing, *intentionally* joining shorter reads together might produce better results. I haven't tried, but I am curious to know.)
 
 # Requirements
 The demultiplexing script requires regex and BioPython. The full Snakemake pipeline additionally requires Snakemake and VSEARCH. 
