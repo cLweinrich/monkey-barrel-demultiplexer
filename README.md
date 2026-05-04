@@ -1,4 +1,4 @@
-# monkey-barrel-demultiplexer
+# Monkey Barrel Demultiplexer
 A demultiplexing pipeline designed specifically to demultiplex barcoded sequences that have been ligated together end-to-end (intentionally or not).
 
 # Amplicons are sometimes (unintentionally) ligated end-to-end during library prep
@@ -19,3 +19,5 @@ Hence, I have written this script to search for monomers with a valid barcode pa
 The demultiplexing script requires [regex](https://pypi.org/project/regex/) and [Biopython](https://biopython.org/). 
 
 The full Snakemake pipeline additionally requires [Snakemake](https://snakemake.readthedocs.io/en/stable/) and [VSEARCH](https://github.com/torognes/vsearch). 
+
+(All these dependencies are available via conda/mamba install)
