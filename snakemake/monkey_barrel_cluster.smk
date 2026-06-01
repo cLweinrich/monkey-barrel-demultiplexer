@@ -1,7 +1,7 @@
 # Monkey Barrel Demultiplexer - Clustering Workflow
 
 ### Setup ###
-configfile: "multimux_cluster_config.yaml"
+configfile: "monkey_barrel_cluster_config.yaml"
 workdir: config["workdir"]
 
 import pandas
