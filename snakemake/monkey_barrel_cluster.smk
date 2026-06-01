@@ -34,7 +34,7 @@ rule multimer_demux:
     threads:
         config["demux_threads"]
     shell:
-        "mamba run -n {params.mamba_env} python multimer_demux.py "
+        "mamba run -n {params.mamba_env} python monkey_barrel_demux.py "
         "{input} "
         "{params.barcodes} "
         "--barcode_order {params.order} "
