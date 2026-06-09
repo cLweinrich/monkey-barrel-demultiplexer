@@ -11,7 +11,7 @@ This is presumably due the T4 ligase having low blunt-end ligation activity. Nor
 
 Although the resultant reads are multimeric amalgamations of various products, the information should still be perfectly salvageable since the constituent monomers with identifying barcodes are intact, albeit strung together like a chain of monkeys.
 
-Hence, I have written this script to search for and extract monomers with a valid barcode pairing within a larger sequence. Monomers can processed as usual. 
+Hence, I have written this script to search for and extract monomers with a valid barcode pairing from within a larger sequence. Monomers can then be processed as usual. 
 
 (As a sidenote, since the MinION is primarily designed for long read sequencing, *intentionally* joining shorter reads together might not be a bad idea. If one were to try this, I would imagine that *BEFORE* the A-tailing step, one would perform an additional ligation step to chain products together, *then* do A-tailing and finish up with a second ligation step to connect adapters.)
 
