@@ -13,7 +13,7 @@ Although the resultant reads are multimeric amalgamations of various products, t
 
 Hence, I have written this script to search for and extract monomers with a valid barcode pairing within a larger sequence. Monomers can processed as usual. 
 
-(As a sidenote, since the MinION is primarily designed for long read sequencing, *intentionally* joining shorter reads together might not be a bad idea. If one were to try this, I would imagine that *BEFORE* the A-tailing step, one would perform an additional ligation step to chain products together, *then* A-tailing, and finish up with a second ligation step to connect adapters.)
+(As a sidenote, since the MinION is primarily designed for long read sequencing, *intentionally* joining shorter reads together might not be a bad idea. If one were to try this, I would imagine that *BEFORE* the A-tailing step, one would perform an additional ligation step to chain products together, *then* do A-tailing and finish up with a second ligation step to connect adapters.)
 
 # Requirements
 The demultiplexing script requires [regex](https://pypi.org/project/regex/) and [Biopython](https://biopython.org/). 
